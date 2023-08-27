@@ -7,16 +7,16 @@
         public function userCreate(){
             $user = new User(
                 null,
-                4,
-                "Juan",
-                "Perez",
+                1,
+                "David",
+                "Rodriguez",
                 1016005953,
-                "juan@perez.com",
+                "david@rodriguez.com",
                 3006473024,
                 123456789,
-                "active"
+                1
             );
-            $user->createUser();           
+            $user->createUser();          
         }
     }
 ?>

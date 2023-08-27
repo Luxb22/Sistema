@@ -18,16 +18,16 @@ CREATE TABLE ROLES (
 -- Table USUARIOS
 -- -----------------------------------------------------
 CREATE TABLE USERS (
-  rol_code INT(11) NOT NULL,
+  rol_codigo INT(11) NOT NULL AUTO_INCREMENT,
   user_code INT(11) NOT NULL,
   user_name VARCHAR(45) NOT NULL,
   user_last_name VARCHAR(45) NOT NULL,
-  user_id VARCHAR(45) NOT NULL,
+  user_id INT(11) NOT NULL,
   user_mail VARCHAR(45) NOT NULL,
-  user_phone VARCHAR(45) NOT NULL,
+  user_phone INT(11) NOT NULL,
   user_password VARCHAR(200) NOT NULL,
-  user_status TINYINT(4) NOT NULL,
-  PRIMARY KEY (user_code),
+  user_status INT(11) NOT NULL,
+  PRIMARY KEY (rol_codigo),
   INDEX ind_users_roles (rol_code ASC),
   CONSTRAINT fk_users_roles
     FOREIGN KEY (rol_code)

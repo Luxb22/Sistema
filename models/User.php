@@ -2,7 +2,7 @@
     class User{
         # PARTE I: Programación Orientada a Objetos (Diagrama Clases)
         private $dbh;
-        private $rolCode
+        private $rolCodigo;
         private $userCode;
         private $userName;
         private $userLastname;
@@ -19,8 +19,8 @@
                 call_user_func_array(array($this, $f), $a);
             }
         }
-        public function __construct9($rolCode,$userCode,$userName,$userLastname,$userId,$userMail,$userPhone,$userPassword,$userStatus){
-            $this->rolCode = $rolCode;
+        public function __construct9($rolCodigo,$userCode,$userName,$userLastname,$userId,$userMail,$userPhone,$userPassword,$userStatus){
+            $this->rolCodigo = $rolCodigo;
             $this->userCode = $userCode;
             $this->userName = $userName;
             $this->userLastname = $userLastname;
@@ -30,12 +30,12 @@
             $this->userPassword = $userPassword;
             $this->userStatus = $userStatus;
         }
-        // rolCode
-        public function setRolCode($rolCode){
-            $this->rolCode = $rolCode;
+        // rolCodigo
+        public function setRolCodigo($rolCodigo){
+            $this->rolCodigo = $rolCodigo;
         }
-        public function getRolCode(){
-            return $this->rolCode;
+        public function getRolCodigo(){
+            return $this->rolCodigo;
         }
         // userCode
         public function setUserCode($userCode){
@@ -97,12 +97,19 @@
         # PARTE II: Persistencia a la Base de Datos (Casos de Uso, CRUD)
 
         // CUXX - Registrar Usuario
-        public function creteUser(){
+        public function createUser(){
             try {                
-                $sql = 'INSERT INTO USERS VALUES (:rolCode,:rolName)';  
+                $sql = 'INSERT INTO USERS VALUES (:rolCodigo,:userCode,:userName,:userLastname,:userId,:userMail,:userPhone,:userPassword,:userStatus)';  
                 $stmt = $this->dbh->prepare($sql);                
-                $stmt->bindValue('rolCode', $this->getRolCode());
-                $stmt->bindValue('rolName', $this->getRolName());                
+                $stmt->bindValue('rolCodigo', $this->getRolCodigo());
+                $stmt->bindValue('userCode', $this->getUserCode()); 
+                $stmt->bindValue('userName', $this->getUserName());
+                $stmt->bindValue('userLastname', $this->getUserLastname());
+                $stmt->bindValue('userId', $this->getUserId());
+                $stmt->bindValue('userMail', $this->getUserMail());
+                $stmt->bindValue('userPhone', $this->getUserPhone());
+                $stmt->bindValue('userPassword', $this->getUserPassword());
+                $stmt->bindValue('userStatus', $this->getUserStatus());               
                 $stmt->execute();
             } catch (Exception $e) {
                 die($e->getMessage());
