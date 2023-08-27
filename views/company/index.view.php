@@ -33,7 +33,7 @@
 	<link rel="stylesheet" href="assets/landing/css/flatpickr.min.css">
 
 
-	<title>Financing &mdash; Free Bootstrap 5 Website Template by Untree.co</title>
+	<title>MITRA &mdash; Sistema de Facturacion e inventario</title>
 </head>
 <body>
 
@@ -52,33 +52,22 @@
 				<div class="site-navigation">
 					<div class="row g-0 align-items-center">
 						<div class="col-2">
-							<a href="index.html" class="logo m-0 float-start">Financing<span class="text-primary">.</span></a>
+							<a href="index.html" class="logo m-0 float-start">MITRA<span class="text-primary">.</span></a>
 						</div>
 						<div class="col-8 text-center ">
 							<ul class="js-clone-nav d-none d-lg-inline-block text-start site-menu mx-auto">
-								<li class="active"><a href="index.html">Home</a></li>
+								<li class="active"><a href="index.html">Inicio</a></li>
 								<li class="has-children">
-									<a href="financing.html">Pages</a>
+									<a href="financing.html">Catalogo</a>
 									<ul class="dropdown">
-										<li><a href="financing.html">Financing</a></li>
-										<li><a href="single.html">Blog Single</a></li>
-										<li><a href="case-study.html">Case Study Detail</a></li>
-										<li><a href="#">Menu One</a></li>
-										<li><a href="#">Menu Two</a></li>
-										<li class="has-children">
-											<a href="#">Dropdown</a>
-											<ul class="dropdown">
-												<li><a href="#">Sub Menu One</a></li>
-												<li><a href="#">Sub Menu Two</a></li>
-												<li><a href="#">Sub Menu Three</a></li>
-											</ul>
-										</li>
+										<li><a href="financing.html">Chaquetas</a></li>
+										<li><a href="single.html">Otros productos</a></li>
 									</ul>
 								</li>
-								<li><a href="blog.html">Blog</a></li>
-								<li><a href="services.html">Services</a></li>
-								<li><a href="about.html">About</a></li>
-								<li><a href="contact.html">Contact Us</a></li>
+								<li><a href="blog.html">Comentarios</a></li>
+								<li><a href="services.html">Servicios</a></li>
+								<li><a href="about.html">Sobre Nosotros</a></li>
+								<li><a href="views/company/contacto.view.php">Contactenos</a></li>
 							</ul>
 						</div>
 						<div class="col-2 text-end">
@@ -88,7 +77,7 @@
 
 							<a href="#" class="call-us d-flex align-items-center">
 								<span class="icon-phone"></span>
-								<span>123-489-9381</span>
+								<span>(+57) 300-6245209</span>
 							</a>
 						</div>
 					</div>
@@ -102,16 +91,17 @@
 		<div class="container">
 			<div class="row align-items-center justify-content-between pt-5">
 				<div class="col-lg-6 text-center text-lg-start pe-lg-5">
-					<h1 class="heading text-white mb-3" data-aos="fade-up">Smart banking for financial freedom.</h1>
-					<p class="text-white mb-5" data-aos="fade-up" data-aos-delay="100">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
+					<h1 class="heading text-white mb-3" data-aos="fade-up">MITRA, Haciendo tu vida mas facil desde tiempos inmemoriales</h1>
+					<p class="text-white mb-5" data-aos="fade-up" data-aos-delay="100">En la empresa D’JES se  evidencio la necesidad de sistematizar los procesos de compra de insumos, administración de inventario, gestión de nominas y facturación de ventas.En base a las distintas necesidades, se plantean los objetivos que darán solución a las mismas por medio del software.
+</p>
 					<div class="align-items-center mb-5 mm" data-aos="fade-up" data-aos-delay="200">
-						<a href="contact.html" class="btn btn-outline-white-reverse me-4">Contact us</a>
-						<a href="https://www.youtube.com/watch?v=Mb1zrW_zra4" class="text-white glightbox">Watch the video</a>
+						<a href="views/company/contacto.view.php" class="btn btn-outline-white-reverse me-4">Contactanos</a>
+						<a href="https://www.youtube.com/watch?v=dyB1dvsRYRc&ab_channel=MetalHero" class="text-white glightbox">Mira el video</a>
 					</div>
 				</div>
 				<div class="col-lg-6" data-aos="fade-up" data-aos-delay="300">
 					<div class="img-wrap">
-						<img src="assets/landing/images/img-1.jpg" alt="Image" class="img-fluid rounded">
+						<img src="assets/landing/images/chaqueta.jpg" alt="Image" class="img-fluid rounded" width="400">
 					</div>
 				</div>
 			</div>
@@ -123,21 +113,23 @@
 		<div class="container">
 			<div class="row justify-content-between">
 				<div class="col-lg-7 mb-4 mb-lg-0">
-					<img src="assets/landing/images/img-3.jpg" alt="Image" class="img-fluid rounded
-					">
+					<img src="assets/landing/images/empresa.jpg" alt="Image" class="img-fluid rounded
+					" width="800">
 				</div>
 				<div class="col-lg-4 ps-lg-2">
 					<div class="mb-5">
-						<h2 class="text-black h4">Make payment fast and smooth.</h2>
-						<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
+						<h2 class="text-black h4">Problema</h2>
+						<p>La empresa D’JES se dedica a  la confección de chaquetas desde el año 2008  para su  respectiva venta al por mayor y al detal en la zona de “El madrugón” (centro de Bogotá D.C), tiene su sede principal en el barrio Villamayor y sus empleados trabajan con la modalidad “a satélite”. 
+</p>
 					</div>
 					<div class="d-flex mb-3 service-alt">
 						<div>
 							<span class="bi-wallet-fill me-4"></span>
 						</div>
 						<div>
-							<h3>Build financial</h3>
-							<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
+							<h3>Produccion</h3>
+							<p>Se realiza primero la compra de sus insumos (tela, guata, cuchillas, cremalleras, etc.), la primera fase se basa en usar los insumos y adecuarlos (trazo, tendido, corte y separación) para el posterior ensamble, en seguida, se decide la asignación de trabajo a cada empleado, ellos tienen unos plazos acordados para la entrega de estas prendas, por último, se reciben las prendas en las instalaciones se hace mantiene un conteo por empleado para su pago (quincenal) y se alistan para el traslado al  punto de venta.
+</p>
 						</div>
 					</div>
 
@@ -146,8 +138,9 @@
 							<span class="bi-pie-chart-fill me-4"></span>
 						</div>
 						<div>
-							<h3>Invest for the future</h3>
-							<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
+							<h3>Cliente final</h3>
+							<p>El cliente manifiesta la dificultad de mantener disponible la contabilidad de sus costos y sus ganancias, además que no siempre tiene a primera disposición la información de sus insumos y los productos disponibles para venta y envío. 
+</p>
 						</div>
 					</div>
 
