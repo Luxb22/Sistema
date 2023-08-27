@@ -4,13 +4,12 @@
         public function main(){}
 
         // Crear Rol
-        public function createRol(){            
+        public function rolCreate(){            
             $rol = new Rol(
-                3,
-                "Costomer"
+                null,
+                "seller"
             );            
-            echo "<br>Código: " . $rol->getRolCode();
-            echo "<br>Nombre: " . $rol->getRolName();
+            $rol->createRol();
         }
     }
 ?>
