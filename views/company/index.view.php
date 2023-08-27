@@ -58,7 +58,7 @@
 							<ul class="js-clone-nav d-none d-lg-inline-block text-start site-menu mx-auto">
 								<li class="active"><a href="index.html">Inicio</a></li>
 								<li class="has-children">
-									<a href="financing.html">Catalogo</a>
+									<a href="financing.html">CCatalogo</a>
 									<ul class="dropdown">
 										<li><a href="financing.html">Chaquetas</a></li>
 										<li><a href="single.html">Otros productos</a></li>
@@ -157,7 +157,7 @@
 					<div class="feature d-flex">
 						<span class="bi-bag-check-fill"></span>
 						<div>
-							<h3>Build financial</h3>
+							<h3>Yesid le gusta eñ pito</h3>
 							<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. </p>
 						</div>
 					</div>
@@ -188,7 +188,7 @@
 		<div class="container">
 			<div class="row">
 				<div class="col-lg-7 order-lg-2 mb-4 mb-lg-0">
-					<img src="assets/landing/images/img-1.jpg" alt="Image" class="img-fluid">
+					<img src="assets/landing/images/chaqueta.jpg" alt="Image" class="img-fluid" width="500">
 				</div>
 				<div class="col-lg-5 pe-lg-5">
 					<div class="mb-5">
