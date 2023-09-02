@@ -1,6 +1,6 @@
 <?php
     require_once "models/DataBase.php";    
-    require_once "controllers/Users.php";        
-    $controller = new Users;
-    $controller->userCreate();    
+    require_once "controllers/Works.php";        
+    $controller = new Works;
+    $controller->workCreate();   
 ?>

@@ -100,7 +100,7 @@
         public function createUser(){
             try {                
                 $sql = 'INSERT INTO USERS VALUES (:rolCodigo,:userCode,:userName,:userLastname,:userId,:userMail,:userPhone,:userPassword,:userStatus)';  
-                $stmt = $this->dbh->prepare($sql);                
+                $stmt = $this->dbh->prepare($sql);             
                 $stmt->bindValue('rolCodigo', $this->getRolCodigo());
                 $stmt->bindValue('userCode', $this->getUserCode()); 
                 $stmt->bindValue('userName', $this->getUserName());

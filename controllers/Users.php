@@ -6,7 +6,7 @@
         //Crear Usuario
         public function userCreate(){
             $user = new User(
-                null,
+                10,
                 1,
                 "David",
                 "Rodriguez",
