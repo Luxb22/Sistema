@@ -115,6 +115,69 @@
                 die($e->getMessage());
             }
         }
+        # CUXX - Consultar Usuarios
+        public function readUser(){
+            try {
+                $userList = [];
+                $sql = 'SELECT * FROM USERS';
+                $stmt = $this->dbh->query($sql);
+                foreach ($stmt->fetchAll() as $user) {
+                    $userList[] = new User(
+                        $user['rol_code'],
+                        $user['user_code'],
+                        $user['user_name'],
+                        $user['user_last_name'],
+                        $user['user_id'],
+                        $user['user_mail'],
+                        $user['user_phone'],
+                        $user['user_password'],
+                        $user['user_status']
+                    );
+                }
+                return $userList;
+            } catch (Exception $e) {
+                die($e->getMessage());
+            }
+        }
+        # CUXX - Actualizar Usuario
+        public function updateUser(){
+            try {                
+                $sql = 'UPDATE USERS SET
+                            rol_code = :rolCode,
+                            user_code = :usercode,
+                            user_name = :userName,
+                            user_last_name = :userLastname,
+                            user_id = :userId,
+                            user_mail = :userMail,
+                            user_phone = :userPhone,
+                            user_password = :userPassword,
+                            user_status = :userStatus
+                        WHERE user_code = :userCode';
+                $stmt = $this->dbh->prepare($sql);
+                $stmt->bindValue('userCode', $this->getUserCode());
+                $stmt->bindValue('userName', $this->getUserName());
+                $stmt->bindValue('userLastname', $this->getUserLastname());
+                $stmt->bindValue('userId', $this->getUserId());
+                $stmt->bindValue('userMail', $this->getUserMail());
+                $stmt->bindValue('userPhone', $this->getUserPhone());
+                $stmt->bindValue('userPassword', $this->getUserPassword());
+                $stmt->bindValue('userStatus', $this->getUserStatus());
+                $stmt->execute();
+            } catch (Exception $e) {
+                die($e->getMessage());
+            }
+        }
+        # CUXX - Eliminar Usuario
+        public function deleteUser($userCode){
+            try {
+                $sql = 'DELETE FROM USERS WHERE user_code = :userCode';
+                $stmt = $this->dbh->prepare($sql);
+                $stmt->bindValue('userCode', $userCode);
+                $stmt->execute();
+            } catch (Exception $e) {
+                die($e->getMessage());
+            }            
+        }
     }
 
 
