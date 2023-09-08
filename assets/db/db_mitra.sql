@@ -43,7 +43,7 @@ CREATE TABLE PRODUCTIONS (
   prod_description VARCHAR(45) NOT NULL,
   prod_date INT(11) NOT NULL,
   prod_amount INT(100) NOT NULL,
-  prod_id INT(11) NOT NULL AUTO_INCREMENT,
+  prod_id INT(11) NOT NULL,
   prod_name VARCHAR(45) NOT NULL,
   rol_code INT(11) NOT NULL,  -- Agregar el campo para la relación con ROLES
   PRIMARY KEY (prod_code),
