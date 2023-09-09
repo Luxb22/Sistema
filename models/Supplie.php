@@ -1,4 +1,5 @@
 <?php
+    # Programacion orientada a objetos
     class Supplie{
         private $dbh;
         private $supplieid;
@@ -53,6 +54,7 @@
             return $this->supplieamount;
         } 
 
+        // CUXX - Registrar Insumo
         public function createSupplie(){
             try {
                 $sql = 'INSERT INTO SUPPLIES VALUES (:supplieid,:suppliename,:suppliedate,:supplieamount)';
@@ -65,6 +67,25 @@
             } catch (Exception $e) {
                 die($e->getMessage());
             } 
+        }
+        // CUXX - Consultar Insumo
+        public function readSupplie(){
+            try {
+                $supplieList = [];
+                $sql = 'SELECT * FROM SUPPLIES';
+                $stmt = $this->dbh->query($sql);
+                foreach ($stmt->fetchAll() as $supplie) {
+                    $supplieList[] = new Supplie(
+                        $supplie['supplie_code'],
+                        $supplie['supplie_code'],
+                        $supplie['supplie_code'],
+                        $supplie['supplie_name']
+                    );
+                }
+                return $rolList;
+            } catch (Exception $e) {
+                die($e->getMessage());
+            }
         }
 
     }

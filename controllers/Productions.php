@@ -47,7 +47,7 @@
                 $production->updateProduction();
             }
         }
-        // Eliminar Roles
+        // Eliminar Produccion
         public function productionDelete() {
             $prod = new Production;
             $prod->deleteprod($_GET['prodCode']);
