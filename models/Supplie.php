@@ -76,17 +76,66 @@
                 $stmt = $this->dbh->query($sql);
                 foreach ($stmt->fetchAll() as $supplie) {
                     $supplieList[] = new Supplie(
-                        $supplie['supplie_code'],
-                        $supplie['supplie_code'],
-                        $supplie['supplie_code'],
-                        $supplie['supplie_name']
+                        $supplie['supplie_id'],
+                        $supplie['supplie_name'],
+                        $supplie['supplie_date'],
+                        $supplie['supplie_amount']
                     );
                 }
-                return $rolList;
+                return $supplieList;
             } catch (Exception $e) {
                 die($e->getMessage());
             }
         }
-
+        # CUXX - Obtener Insumo por Id
+        public function getSupplieById($supplieId){
+            try {
+                $sql = "SELECT * FROM SUPPLIES WHERE supplie_id=:supplieId";
+                $stmt = $this->dbh->prepare($sql);
+                $stmt->bindValue('supplieId', $supplieId);
+                $stmt->execute();
+                $supplieDb = $stmt->fetch();
+                $supplie = new Supplie(
+                    $supplieDb['supplie_id'],
+                    $supplieDb['supplie_name'],
+                    $supplieDb['supplie_date'],
+                    $supplieDb['supplie_amount']
+                );
+                return $supplie; 
+            } catch (Exception $e) {
+                die($e->getMessage());
+            }
+        }
+        # CUXX - Actualizar Insumo
+        public function updateSupplie(){
+            try {               
+                $sql = 'UPDATE SUPPLIES SET
+                            supplie_id = :supplieId,
+                            supplie_name = :supplieName,
+                            supplie_date = :supplieDate,
+                            supplie_amount = :supplieAmount
+                        WHERE supplie_code = :supplieCode';
+                $stmt = $this->dbh->prepare($sql);
+                $stmt->bindValue('supplieId', $this->getSupplieId());
+                $stmt->bindValue('supplieName', $this->getSupplieName());
+                $stmt->bindValue('supplieDate', $this->getSupplieDate());
+                $stmt->bindValue('supplieAmount', $this->getSupplieAmount());
+                $stmt->execute();
+            } catch (Exception $e) {
+                die($e->getMessage());
+            }
+        }
+        # CUXX - Eliminar Insumo
+        public function deleteSupplie($supplieId){
+            try {
+                $sql = 'DELETE FROM SUPPLIES WHERE supplie_id = :supplieId';
+                $stmt = $this->dbh->prepare($sql);
+                $stmt->bindValue('supplieId', $supplieId);
+                $stmt->execute();
+            } catch (Exception $e) {
+                die($e->getMessage());
+            }            
+        }
+        
     }
 ?>
