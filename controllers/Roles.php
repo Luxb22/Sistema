@@ -13,8 +13,8 @@
             if ($_SERVER['REQUEST_METHOD'] == 'POST') {          
             $rol = new Rol(
                 null,
-                "seller"
-            );            
+                $_POST['rolName'],
+            );           
             $rol->createRol();
             header("Location:?c=Roles&a=rolRead");
             }

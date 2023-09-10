@@ -2,25 +2,24 @@
     require_once "models/User.php";
     class Users {
         public function main(){
-            header("Location:?c=Dashboard")
+            header("Location:?c=Dashboard");
         }
 
         //Crear Usuario
         public function userCreate(){
             if ($_SERVER['REQUEST_METHOD'] == 'GET') {
-                echo "Formulario Crear Usuarios";
+                require_once "views/modules/users/crear.usuario.view.php";
             } 
             if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             $user = new User(
-                10,
-                1,
-                "David",
-                "Rodriguez",
-                1016005953,
-                "david@rodriguez.com",
-                3006473024,
-                123456789,
-                1
+                null,
+                $_POST['userName'],
+                $_POST['userLastname'],
+                $_POST['userId'],
+                $_POST['userMail'],
+                $_POST['userPhone'],
+                $_POST['userPassword'],
+                $_POST['userStatus'],
             );
             $user->createUser();
             header("Location:?c=Users&a=userRead");  
@@ -30,7 +29,7 @@
         public function userRead(){            
             $users = new User();
             $users = $users->readUser();
-            echo "Formulario Consultar Roles";
+            require_once "views/modules/users/leer.usuarios.view.php";
         }
         // Actualizar Usuarios
         public function userUpdate(){
