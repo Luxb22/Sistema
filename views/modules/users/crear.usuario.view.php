@@ -8,6 +8,9 @@
 <body>
     <h1>Crear Nuevo Usuario</h1>
     <form action="" method="POST">
+        <label for="nombre">Codigo del Rol:</label>
+        <input type="text" name="rolCode" required>
+        <br><br>
         <label for="nombre">Nombre del Usuario:</label>
         <input type="text" name="userName" required>
         <br><br>
@@ -27,8 +30,8 @@
         <input type="password" name="userPassword" required>
         <br><br>
         <select name="userStatus" id="userStatus">
-            <option>Activo</option>
-            <option>Inactivo</option>
+            <option value ="1">Activo</option>
+            <option value ="0">Inactivo</option>
         </select>
 
         <input type="submit" value="Enviar">

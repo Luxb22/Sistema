@@ -9,7 +9,7 @@
  <div class="container-fluid">
      <ul class="full-box list-unstyled page-nav-tabs">
          <li>
-             <a href="?c=Roles&a=registraRoles"><i class="fas fa-plus fa-fw"></i> &nbsp; AGREGAR ROL</a>
+             <a href="?c=Roles&a=rolCreate"><i class="fas fa-plus fa-fw"></i> &nbsp; AGREGAR ROL</a>
          </li>
          <li>
              <a class="active" href="#"><i class="fas fa-clipboard-list fa-fw"></i> &nbsp; LISTA DE ITEMS</a>
@@ -38,12 +38,12 @@
                          <td><?php echo $rol->getRolName(); ?></td>
                          <td>
                              <a href="?c=Roles&a=actualizarRoles&codigoRol=<?php echo $rol->getRolCode() ?>" class="btn btn-success">
-                                 <i class="fas fa-sync-alt"></i>
+                                 <i class="fas fa-sync-alt">Actualizar</i>
                              </a>
                          </td>
                          <td>
                              <a href="?c=Roles&a=eliminarRoles&codigoRol=<?php echo $rol->getRolCode() ?>" class="btn btn-warning">
-                                 <i class="far fa-trash-alt"></i>
+                                 <i class="far fa-trash-alt">Eliminar</i>
                              </a>                             
                          </td>
                      </tr>

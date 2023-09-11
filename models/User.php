@@ -2,7 +2,7 @@
     class User{
         # PARTE I: Programación Orientada a Objetos (Diagrama Clases)
         private $dbh;
-        private $rolCodigo;
+        private $rolCode;
         private $userCode;
         private $userName;
         private $userLastname;
@@ -13,14 +13,15 @@
         private $userStatus;
 
         public function __construct(){
+            $this->dbh = DataBase::connection();
             $a = func_get_args();
             $i = func_num_args();
             if (method_exists($this, $f = '__construct' . $i)) {
                 call_user_func_array(array($this, $f), $a);
             }
         }
-        public function __construct9($rolCodigo,$userCode,$userName,$userLastname,$userId,$userMail,$userPhone,$userPassword,$userStatus){
-            $this->rolCodigo = $rolCodigo;
+        public function __construct9($rolCode,$userCode,$userName,$userLastname,$userId,$userMail,$userPhone,$userPassword,$userStatus){
+            $this->rolCode = $rolCode;
             $this->userCode = $userCode;
             $this->userName = $userName;
             $this->userLastname = $userLastname;
@@ -30,12 +31,12 @@
             $this->userPassword = $userPassword;
             $this->userStatus = $userStatus;
         }
-        // rolCodigo
-        public function setRolCodigo($rolCodigo){
-            $this->rolCodigo = $rolCodigo;
+        // rolCode
+        public function setRolCode($rolCode){
+            $this->rolCode = $rolCode;
         }
-        public function getRolCodigo(){
-            return $this->rolCodigo;
+        public function getRolCode(){
+            return $this->rolCode;
         }
         // userCode
         public function setUserCode($userCode){
@@ -99,9 +100,9 @@
         // CUXX - Registrar Usuario
         public function createUser(){
             try {                
-                $sql = 'INSERT INTO USERS VALUES (:rolCodigo,:userCode,:userName,:userLastname,:userId,:userMail,:userPhone,:userPassword,:userStatus)';  
-                $stmt = $this->dbh->prepare($sql);             
-                $stmt->bindValue('rolCodigo', $this->getRolCodigo());
+                $sql = 'INSERT INTO USERS VALUES (:userCode,:userName,:userLastname,:userId,:userMail,:userPhone,:userPassword,:userStatus,:rolCode)';  
+                $stmt = $this->dbh->prepare($sql);           
+                $stmt->bindValue('rolCode', $this->getRolCode());
                 $stmt->bindValue('userCode', $this->getUserCode()); 
                 $stmt->bindValue('userName', $this->getUserName());
                 $stmt->bindValue('userLastname', $this->getUserLastname());

@@ -9,13 +9,13 @@
  <div class="container-fluid">
      <ul class="full-box list-unstyled page-nav-tabs">
          <li>
-             <a href="?c=Roles&a=registraRoles"><i class="fas fa-plus fa-fw"></i> &nbsp; AGREGAR ROL</a>
+             <a href="?c=Roles&a=registraRoles"><i class="fas fa-plus fa-fw"></i> &nbsp; AGREGAR USUARIO</a>
          </li>
          <li>
-             <a class="active" href="#"><i class="fas fa-clipboard-list fa-fw"></i> &nbsp; LISTA DE ITEMS</a>
+             <a class="active" href="#"><i class="fas fa-clipboard-list fa-fw"></i> &nbsp; LISTA DE USUARIOS</a>
          </li>
          <li>
-             <a href="#"><i class="fas fa-search fa-fw"></i> &nbsp; BUSCAR ITEM</a>
+             <a href="#"><i class="fas fa-search fa-fw"></i> &nbsp; BUSCAR USUARIO</a>
          </li>
      </ul>
  </div>
@@ -25,25 +25,39 @@
          <table class="table table-dark table-sm">
              <thead>
                  <tr class="text-center roboto-medium">
+                     <th>CÓDIGO ROL</th>
                      <th>CÓDIGO USUARIO</th>
                      <th>NOMBRE USUARIO</th>
+                     <th>APELLIDO USUARIO</th>
+                     <th>CEDULA USUARIO</th>
+                     <th>EMAIL USUARIO</th>
+                     <th>TELEFONO USUARIO</th>
+                     <th>CONTRASEÑA USUARIO</th>
+                     <th>STATUS USUARIO</th>
                      <th>ACTUALIZAR</th>
                      <th>ELIMINAR</th>
                  </tr>
              </thead>
              <tbody>
-                 <?php foreach ($roles as $rol) : ?>
+                 <?php foreach ($users as $user) : ?>
                      <tr class="text-center">
-                         <td><?php echo $rol->getRolCode(); ?></td>
-                         <td><?php echo $rol->getRolName(); ?></td>
+                         <td><?php echo $user->getRolCode(); ?></td>
+                         <td><?php echo $user->getUserCode(); ?></td>
+                         <td><?php echo $user->getUserName(); ?></td>
+                         <td><?php echo $user->getUserLastName(); ?></td>
+                         <td><?php echo $user->getUserId(); ?></td>
+                         <td><?php echo $user->getUserMail(); ?></td>
+                         <td><?php echo $user->getUserPhone(); ?></td>
+                         <td><?php echo $user->getUserPassword(); ?></td>
+                         <td><?php echo $user->getUserStatus(); ?></td>
                          <td>
-                             <a href="?c=Roles&a=actualizarRoles&codigoRol=<?php echo $rol->getRolCode() ?>" class="btn btn-success">
-                                 <i class="fas fa-sync-alt"></i>
+                             <a href="?c=Users&a=actualizarUsers&codigoUser=<?php echo $user->getUserCode() ?>" class="btn btn-success">
+                                 <i class="fas fa-sync-alt">Actualizar</i>
                              </a>
                          </td>
                          <td>
-                             <a href="?c=Roles&a=eliminarRoles&codigoRol=<?php echo $rol->getRolCode() ?>" class="btn btn-warning">
-                                 <i class="far fa-trash-alt"></i>
+                             <a href="?c=Roles&a=eliminarRoles&codigoRol=<?php echo $user->getUserCode() ?>" class="btn btn-warning">
+                                 <i class="far fa-trash-alt">Eliminar</i>
                              </a>                             
                          </td>
                      </tr>

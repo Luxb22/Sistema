@@ -31,7 +31,7 @@
             if ($_SERVER['REQUEST_METHOD'] == 'GET') {
                 $rol = new Rol();
                 $rol = $rol->getRolById($_GET['rolCode']);
-                echo "Formulario de Actualización";                
+                require_once "views/modules/roles/actualizar.rol.view.php";              
             }
             if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 $rol = new Rol(
@@ -39,6 +39,7 @@
                     $_POST['rolName']                    
                 );            
                 $rol->updateRol();
+                header("Location:?c=Roles&a=rolUpdate");
             }
         }
         // Eliminar Roles
