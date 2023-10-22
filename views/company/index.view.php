@@ -56,9 +56,9 @@
 						</div>
 						<div class="col-8 text-center ">
 							<ul class="js-clone-nav d-none d-lg-inline-block text-start site-menu mx-auto">
-								<li class="active"><a href="index.html">Inicio</a></li>
+								<li class="active"><a href="views/company/login.view.php">Iniciar Sesion</a></li>
 								<li class="has-children">
-									<a href="financing.html">CCatalogo</a>
+									<a href="financing.html">Catalogo</a>
 									<ul class="dropdown">
 										<li><a href="financing.html">Chaquetas</a></li>
 										<li><a href="single.html">Otros productos</a></li>

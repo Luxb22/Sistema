@@ -97,6 +97,34 @@
 
         # PARTE II: Persistencia a la Base de Datos (Casos de Uso, CRUD)
 
+        //CUXX - Iniciar Sesion
+
+        public function login(){
+            $sql = 'SELECT * FROM USERS                    
+                    WHERE user_mail = :userMail AND user_password = :userPassword';
+            $stmt = $this->dbh->prepare($sql);
+            $stmt->bindValue('userMail', $this->getUserMail());
+            $stmt->bindValue('userPassword', sha1($this->getUserPassword()));
+            $stmt->execute();
+            $userDb = $stmt->fetch();
+            if ($userDb) {
+                $user = new User(
+                    $user['rol_code'],
+                    $user['user_code'],
+                    $user['user_name'],
+                    $user['user_last_name'],
+                    $user['user_id'],
+                    $user['user_mail'],
+                    $user['user_phone'],
+                    $user['user_password'],
+                    $user['user_status'] 
+                );                   
+                return $user;
+            } else {
+                return false;
+            }
+        }
+
         // CUXX - Registrar Usuario
         public function createUser(){
             try {                
@@ -110,7 +138,7 @@
                 $stmt->bindValue('userMail', $this->getUserMail());
                 $stmt->bindValue('userPhone', $this->getUserPhone());
                 $stmt->bindValue('userPassword', $this->getUserPassword());
-                $stmt->bindValue('userStatus', $this->getUserStatus());               
+                $stmt->bindValue('userStatus', sha1($this->getUserPassword()));               
                 $stmt->execute();
             } catch (Exception $e) {
                 die($e->getMessage());
